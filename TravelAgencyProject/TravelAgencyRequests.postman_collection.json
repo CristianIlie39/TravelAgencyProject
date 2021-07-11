@@ -1,0 +1,2344 @@
+{
+	"info": {
+		"_postman_id": "5fad7dca-9195-4f69-a40c-6ed9cb28c3b1",
+		"name": "TravelAgencyRequests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Continent",
+			"item": [
+				{
+					"name": "insertContinent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Africa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/insertContinent?adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"insertContinent"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						},
+						"description": "Vreau sa introduc un continent nou in BD"
+					},
+					"response": []
+				},
+				{
+					"name": "findContinentByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findContinent?name=Europa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findContinent"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Europa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllContinents",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/findAllContinents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findAllContinents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateContinentName",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/updateContinentName?currentName=Asia&newName=Europe&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateContinentName"
+							],
+							"query": [
+								{
+									"key": "currentName",
+									"value": "Asia"
+								},
+								{
+									"key": "newName",
+									"value": "Europe"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteContinentByName",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteContinentByName?name=Asia&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteContinentByName"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Asia"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Country",
+			"item": [
+				{
+					"name": "insertCountry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Romania\",\r\n    \"continentDTO\":{\r\n        \"name\":\"Europa\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/insertCountry?adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"insertCountry"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findCountryByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findCountry?name=Romania",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findCountry"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Romania"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findCountriesByContinentName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findCountriesByContinentName?continentName=Europa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findCountriesByContinentName"
+							],
+							"query": [
+								{
+									"key": "continentName",
+									"value": "Europa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCountries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findAllCountries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findAllCountries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCountryName",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateCountryName?currentName=Canada&newName=Mexic&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateCountryName"
+							],
+							"query": [
+								{
+									"key": "currentName",
+									"value": "Canada"
+								},
+								{
+									"key": "newName",
+									"value": "Mexic"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCountry",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteCountry?name=Canada&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteCountry"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Canada"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "City",
+			"item": [
+				{
+					"name": "insertCity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Roma\",\r\n    \"countryDTO\":{\r\n        \"name\":\"Italy\",\r\n        \"continentDTO\":{\r\n            \"name\":\"Europa\"\r\n        }\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/insertCity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"insertCity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findCity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findCity?cityDTOName=Bucharest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findCity"
+							],
+							"query": [
+								{
+									"key": "cityDTOName",
+									"value": "Bucharest"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findCitiesByCountryName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findCitiesByCountryName?countryName=Romania",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findCitiesByCountryName"
+							],
+							"query": [
+								{
+									"key": "countryName",
+									"value": "Romania"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findAllCities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findAllCities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCityName",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateCityName?currentName=Madrid&newName=Barcelona",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateCityName"
+							],
+							"query": [
+								{
+									"key": "currentName",
+									"value": "Madrid"
+								},
+								{
+									"key": "newName",
+									"value": "Barcelona"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteCity?name=Bucharest&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteCity"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Bucharest"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel",
+			"item": [
+				{
+					"name": "insertHotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Rin Grand Hotel\",\r\n    \"stars\":4,\r\n    \"description\":\"very nice\",\r\n    \"cityDTO\":{\r\n        \"name\":\"Bucharest\",\r\n        \"countryDTO\":{\r\n            \"name\":\"Romania\",\r\n            \"continentDTO\":{\r\n                \"name\":\"Europe\"\r\n            }\r\n        }\r\n    },\r\n    \"roomDTOSet\":[\r\n        {\r\n            \"roomType\":\"double\",\r\n            \"availableRooms\":30,\r\n            \"extraBed\":false\r\n        },\r\n        {\r\n            \"roomType\":\"family\",\r\n            \"availableRooms\":20,\r\n            \"extraBed\":true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/insertHotel?adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"",
+								"insertHotel"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertHotel2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Hilton\",\r\n    \"stars\":4,\r\n    \"description\":\"very nice\",\r\n    \"cityDTO\":{\r\n        \"name\":\"Munchen\",\r\n        \"countryDTO\":{\r\n            \"name\":\"Germany\",\r\n            \"continentDTO\":{\r\n                \"name\":\"Europe\"\r\n            }\r\n        }\r\n    },\r\n    \"roomDTOSet\":[\r\n        {\r\n            \"roomType\":\"family\",\r\n            \"availableRooms\":20,\r\n            \"extraBed\":true\r\n        },\r\n        {\r\n            \"roomType\":\"apartment\",\r\n            \"availableRooms\":10,\r\n            \"extraBed\":true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/insertHotel?adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"",
+								"insertHotel"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertHotel3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Marriot\",\r\n    \"stars\":4,\r\n    \"description\":\"very nice\",\r\n    \"cityDTO\":{\r\n        \"name\":\"New York\",\r\n        \"countryDTO\":{\r\n            \"name\":\"USA\",\r\n            \"continentDTO\":{\r\n                \"name\":\"America\"\r\n            }\r\n        }\r\n    },\r\n    \"roomDTOSet\":[\r\n        {\r\n            \"roomType\":\"single\",\r\n            \"availableRooms\":20,\r\n            \"extraBed\":false\r\n        },\r\n        {\r\n            \"roomType\":\"double\",\r\n            \"availableRooms\":30,\r\n            \"extraBed\":true\r\n        },\r\n        {\r\n             \"roomType\":\"apartment\",\r\n            \"availableRooms\":15,\r\n            \"extraBed\":true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/insertHotel?adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"",
+								"insertHotel"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertHotel4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Central Park\",\r\n    \"stars\":5,\r\n    \"description\":\"wonderful\",\r\n    \"cityDTO\":{\r\n        \"name\":\"New York\",\r\n        \"countryDTO\":{\r\n            \"name\":\"USA\",\r\n            \"continentDTO\":{\r\n                \"name\":\"America\"\r\n            }\r\n        }\r\n    },\r\n    \"roomDTOSet\":[\r\n        {\r\n            \"roomType\":\"double\",\r\n            \"availableRooms\":30,\r\n            \"extraBed\":false\r\n        },\r\n        {\r\n            \"roomType\":\"family\",\r\n            \"availableRooms\":25,\r\n            \"extraBed\":true\r\n        },\r\n        {\r\n             \"roomType\":\"apartment\",\r\n            \"availableRooms\":10,\r\n            \"extraBed\":true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/insertHotel?adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"",
+								"insertHotel"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllHotelsByCity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findAllHotelsByCity?cityName=New York",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findAllHotelsByCity"
+							],
+							"query": [
+								{
+									"key": "cityName",
+									"value": "New York"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findHotelByNameAndByCityName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findHotelByNameAndByCityName?hotelName=Central Park&cityName=New York",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findHotelByNameAndByCityName"
+							],
+							"query": [
+								{
+									"key": "hotelName",
+									"value": "Central Park"
+								},
+								{
+									"key": "cityName",
+									"value": "New York"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findHotelByStars",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"New York\",\r\n    \"countryDTO\":{\r\n        \"name\":\"USA\",\r\n        \"continentDTO\":{\r\n            \"name\":\"America\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/findHotelsByStars?stars=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findHotelsByStars"
+							],
+							"query": [
+								{
+									"key": "stars",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateHotelName",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/updateHotelName?currentName=Hilton&newName=Continental&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateHotelName"
+							],
+							"query": [
+								{
+									"key": "currentName",
+									"value": "Hilton"
+								},
+								{
+									"key": "newName",
+									"value": "Continental"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteHotel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteHotel?name=Hilton&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteHotel"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Hilton"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "findAvailableRoomByTypeAndByExtrabedAndByHotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findAvailableRoomByTypeAndByExtrabedAndByHotel?roomType=family&extraBed=1&hotelName=Rin Grand Hotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findAvailableRoomByTypeAndByExtrabedAndByHotel"
+							],
+							"query": [
+								{
+									"key": "roomType",
+									"value": "family"
+								},
+								{
+									"key": "extraBed",
+									"value": "1"
+								},
+								{
+									"key": "hotelName",
+									"value": "Rin Grand Hotel"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findRoomByTypeAndByHotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findRoomByTypeAndByHotel?roomType=family&hotelName=Central Park",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findRoomByTypeAndByHotel"
+							],
+							"query": [
+								{
+									"key": "roomType",
+									"value": "family"
+								},
+								{
+									"key": "hotelName",
+									"value": "Central Park"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findRoomByExtraBedAndByHotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findRoomByExtraBedAndByHotel?extraBed=1&hotelName=Central Park",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findRoomByExtraBedAndByHotel"
+							],
+							"query": [
+								{
+									"key": "extraBed",
+									"value": "1"
+								},
+								{
+									"key": "hotelName",
+									"value": "Central Park"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllRoomsByHotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findAllRoomsByHotel?hotelName=Marriot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findAllRoomsByHotel"
+							],
+							"query": [
+								{
+									"key": "hotelName",
+									"value": "Marriot"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAvailableRoomsByTypeAndByHotel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/updateAvailableRoomsByTypeAndByHotel?availableRooms=9&roomType=apartment&hotelName=Central Park&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateAvailableRoomsByTypeAndByHotel"
+							],
+							"query": [
+								{
+									"key": "availableRooms",
+									"value": "9"
+								},
+								{
+									"key": "roomType",
+									"value": "apartment"
+								},
+								{
+									"key": "hotelName",
+									"value": "Central Park"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRoom",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteRoom?roomType=double&hotelName=Rin Grand Hotel&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteRoom"
+							],
+							"query": [
+								{
+									"key": "roomType",
+									"value": "double"
+								},
+								{
+									"key": "hotelName",
+									"value": "Rin Grand Hotel"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Airport",
+			"item": [
+				{
+					"name": "insertAirport",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Bucharest Henri Coanda\",\r\n    \"cityDTO\":{\r\n        \"name\":\"Bucharest\",\r\n        \"countryDTO\":{\r\n            \"name\":\"Romania\",\r\n            \"continentDTO\":{\r\n                \"name\":\"Europe\"\r\n            }\r\n        }\r\n    },\r\n    \"flightDTOSet\":[\r\n        {\r\n            \"flightDepartureDate\":\"2021-05-09\",\r\n            \"flightDepartureTime\":\"10:00:00\",\r\n            \"flightReturnDate\":\"2021-05-15\",\r\n            \"flightReturnTime\":\"15:00:00\",\r\n            \"flightTo\":\"New York\",\r\n            \"price\":5000,\r\n            \"availableSeats\":30\r\n        },\r\n        {\r\n            \"flightDepartureDate\":\"2021-05-09\",\r\n            \"flightDepartureTime\":\"08:00:00\",\r\n            \"flightReturnDate\":\"2021-05-15\",\r\n            \"flightReturnTime\":\"13:00:00\",\r\n            \"flightTo\":\"Munich\",\r\n            \"price\":900,\r\n            \"availableSeats\":20\r\n        }\r\n    ]\r\n\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/insertAirport?adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"insertAirport"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAirportByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findAirportByName?airportName=Bucharest Henri Coanda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findAirportByName"
+							],
+							"query": [
+								{
+									"key": "airportName",
+									"value": "Bucharest Henri Coanda"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAirportsByCityName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findAirportsByCityName?cityName=Bucharest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findAirportsByCityName"
+							],
+							"query": [
+								{
+									"key": "cityName",
+									"value": "Bucharest"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAirportName",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/updateAirportName?currentName=Bucharest Henri Coanda&newName=Bucharest International&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateAirportName"
+							],
+							"query": [
+								{
+									"key": "currentName",
+									"value": "Bucharest Henri Coanda"
+								},
+								{
+									"key": "newName",
+									"value": "Bucharest International"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAirport",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteAirport?airportName=Bucharest Henri Coanda&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteAirport"
+							],
+							"query": [
+								{
+									"key": "airportName",
+									"value": "Bucharest Henri Coanda"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flight",
+			"item": [
+				{
+					"name": "findFlight",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findFlight?flightDestination=New York&flightDepartureDate=2021-05-09&airportName=Bucharest Henri Coanda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findFlight"
+							],
+							"query": [
+								{
+									"key": "flightDestination",
+									"value": "New York"
+								},
+								{
+									"key": "flightDepartureDate",
+									"value": "2021-05-09"
+								},
+								{
+									"key": "airportName",
+									"value": "Bucharest Henri Coanda"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAvailableSeats",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/updateAvailableSeats?numberOfPersons=4&destination=Munich&flightDepartureDate=2021-05-09&airportName=Bucharest Henri Coanda&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateAvailableSeats"
+							],
+							"query": [
+								{
+									"key": "numberOfPersons",
+									"value": "4"
+								},
+								{
+									"key": "destination",
+									"value": "Munich"
+								},
+								{
+									"key": "flightDepartureDate",
+									"value": "2021-05-09"
+								},
+								{
+									"key": "airportName",
+									"value": "Bucharest Henri Coanda"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFlight",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteFlight?destination=Munich&flightDepartureDate=2021-05-09&airportName=Bucharest Henri Coanda&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteFlight"
+							],
+							"query": [
+								{
+									"key": "destination",
+									"value": "Munich"
+								},
+								{
+									"key": "flightDepartureDate",
+									"value": "2021-05-09"
+								},
+								{
+									"key": "airportName",
+									"value": "Bucharest Henri Coanda"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trip",
+			"item": [
+				{
+					"name": "insertTrip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"New York holiday\",\r\n    \"airportDTO\":{\r\n        \"name\":\"Bucharest Henri Coanda\",\r\n        \"cityDTO\":{\r\n            \"name\":\"Bucharest\",\r\n            \"countryDTO\":{\r\n                \"name\":\"Romania\",\r\n                \"continentDTO\":{\r\n                    \"name\":\"Europe\"\r\n                }\r\n            }\r\n        },\r\n        \"flightDTOSet\":[{\r\n            \"flightDepartureDate\":\"2021-05-09\",\r\n            \"flightDepartureTime\":\"06:00:00\",\r\n            \"flightReturnDate\":\"2021-05-15\",\r\n            \"flightReturnTime\":\"14:00:00\",\r\n            \"flightTo\":\"New York\",\r\n            \"price\":5000,\r\n            \"availableSeats\":20\r\n        }]\r\n    },\r\n    \"hotelDTO\":{\r\n        \"name\":\"Central Park\",\r\n        \"stars\":5,\r\n        \"description\":\"wonderful\",\r\n        \"cityDTO\":{\r\n            \"name\":\"New York\",\r\n            \"countryDTO\":{\r\n                \"name\":\"USA\",\r\n                \"continentDTO\":{\r\n                    \"name\":\"America\"\r\n                }\r\n            }\r\n        },\r\n        \"roomDTOSet\":[{\r\n            \"roomType\":\"single\",\r\n            \"availableRooms\":20,\r\n            \"extraBed\":false\r\n        },\r\n        {\r\n            \"roomType\":\"double\",\r\n            \"availableRooms\":30,\r\n            \"extraBed\":false\r\n        },\r\n        {\r\n            \"roomType\":\"family\",\r\n            \"availableRooms\":25,\r\n            \"extraBed\":true\r\n        },\r\n        {\r\n             \"roomType\":\"apartment\",\r\n            \"availableRooms\":10,\r\n            \"extraBed\":true\r\n        }]\r\n    },\r\n    \"departureDate\":\"2021-05-09\",\r\n    \"returnDate\":\"2021-05-15\",\r\n    \"numberDays\":6,\r\n    \"mealType\":\"All Inclusive\",\r\n    \"adultPrice\":4800,\r\n    \"kidPrice\":2400,\r\n    \"promoted\":false,\r\n    \"stock\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/insertTrip?adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"insertTrip"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripByName?tripName=New York holiday",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripByName"
+							],
+							"query": [
+								{
+									"key": "tripName",
+									"value": "New York holiday"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllTrips",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findAllTrips",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findAllTrips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByContinentName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByContinentName?continentName=America",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByContinentName"
+							],
+							"query": [
+								{
+									"key": "continentName",
+									"value": "America"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByCountryName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByCountryName?countryName=USA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByCountryName"
+							],
+							"query": [
+								{
+									"key": "countryName",
+									"value": "USA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByCityOfStay",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByCityOfStay?cityName=New York",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByCityOfStay"
+							],
+							"query": [
+								{
+									"key": "cityName",
+									"value": "New York"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByHotelOfStay",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findByHotelOfStay?hotelName=Central Park",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findByHotelOfStay"
+							],
+							"query": [
+								{
+									"key": "hotelName",
+									"value": "Central Park"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByCityOfDeparture",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByCityOfDeparture?cityDepartureName=Bucharest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByCityOfDeparture"
+							],
+							"query": [
+								{
+									"key": "cityDepartureName",
+									"value": "Bucharest"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByAirport",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByAirport?airportName=Bucharest Henri Coanda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByAirport"
+							],
+							"query": [
+								{
+									"key": "airportName",
+									"value": "Bucharest Henri Coanda"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByDepartureDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByDepartureDate?departure=2021-05-09",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByDepartureDate"
+							],
+							"query": [
+								{
+									"key": "departure",
+									"value": "2021-05-09"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByReturnDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByReturnDate?returnDate=2021-05-15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByReturnDate"
+							],
+							"query": [
+								{
+									"key": "returnDate",
+									"value": "2021-05-15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByMealType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByMealType?mealType=All Inclusive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByMealType"
+							],
+							"query": [
+								{
+									"key": "mealType",
+									"value": "All Inclusive"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByStandardOfHotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByStandardOfHotel?hotelStars=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByStandardOfHotel"
+							],
+							"query": [
+								{
+									"key": "hotelStars",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByNumberOfDays",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByNumberOfDays?numberDays=6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByNumberOfDays"
+							],
+							"query": [
+								{
+									"key": "numberDays",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByPromoted",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByPromoted?promoted=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByPromoted"
+							],
+							"query": [
+								{
+									"key": "promoted",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findTripsByMaximPrice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findTripsByMaximPrice?maxPriceForAdult=5000&maxPriceForKid=3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findTripsByMaximPrice"
+							],
+							"query": [
+								{
+									"key": "maxPriceForAdult",
+									"value": "5000"
+								},
+								{
+									"key": "maxPriceForKid",
+									"value": "3000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findRecentlyPurchasedTrips",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findRecentlyPurchasedTrips?referenceDate=2021-01-01&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findRecentlyPurchasedTrips"
+							],
+							"query": [
+								{
+									"key": "referenceDate",
+									"value": "2021-01-01"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAdultPriceAndKidPriceByTripName",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/updateAdultPriceAndKidPriceByTripName?adminUser=gabi&adultPrice=5000&kidPrice=2500&tripName=New York holiday",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateAdultPriceAndKidPriceByTripName"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								},
+								{
+									"key": "adultPrice",
+									"value": "5000"
+								},
+								{
+									"key": "kidPrice",
+									"value": "2500"
+								},
+								{
+									"key": "tripName",
+									"value": "New York holiday"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTrip",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteTrip?tripName=New York holiday&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteTrip"
+							],
+							"query": [
+								{
+									"key": "tripName",
+									"value": "New York holiday"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "register1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\":\"Dumitrache\",\r\n    \"firstName\":\"Ana-Maria\",\r\n    \"yearOfBirth\":1979,\r\n    \"address\":\"Brasov\",\r\n    \"phoneNumber\":\"0744684499\",\r\n    \"email\":\"ana_maria@yahoo.com\",\r\n    \"accountDTO\":{\r\n        \"username\":\"ana\",\r\n        \"password\":\"parola\",\r\n        \r\n        \"adminRole\":false,\r\n        \"loggedIn\":false\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/registerClient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"registerClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\":\"Vasilescu\",\r\n    \"firstName\":\"Adrian\",\r\n    \"yearOfBirth\":1970,\r\n    \"address\":\"Bucharest\",\r\n    \"phoneNumber\":\"0744684600\",\r\n    \"email\":\"adrian@yahoo.com\",\r\n    \"accountDTO\":{\r\n        \"username\":\"adi\",\r\n        \"password\":\"pass\",\r\n        \r\n        \"adminRole\":false,\r\n        \"loggedIn\":false\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/registerClient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"registerClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\":\"Ionescu\",\r\n    \"firstName\":\"Gabriel\",\r\n    \"yearOfBirth\":1989,\r\n    \"address\":\"Iasi\",\r\n    \"phoneNumber\":\"0740684700\",\r\n    \"email\":\"gabriel@yahoo.com\",\r\n    \"accountDTO\":{\r\n        \"username\":\"gabi\",\r\n        \"password\":\"password\",\r\n        \r\n        \"adminRole\":true,\r\n        \"loggedIn\":true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/registerClient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"registerClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findClientByEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findClientByEmail?email=cristian@yahoo.com&username=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findClientByEmail"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "cristian@yahoo.com"
+								},
+								{
+									"key": "username",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findClientByUsername",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findClientByUsername?clientUsername=cristi&adminUsername=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findClientByUsername"
+							],
+							"query": [
+								{
+									"key": "clientUsername",
+									"value": "cristi"
+								},
+								{
+									"key": "adminUsername",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findClientByYearOfBirth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findClientByYearOfBirth?yearOfBirth=1979&adminUsername=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findClientByYearOfBirth"
+							],
+							"query": [
+								{
+									"key": "yearOfBirth",
+									"value": "1979"
+								},
+								{
+									"key": "adminUsername",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findClientsBySurnameAndFirstName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findClientsBySurnameAndFirstName?surname=Ilie&firstName=Cristian&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findClientsBySurnameAndFirstName"
+							],
+							"query": [
+								{
+									"key": "surname",
+									"value": "Ilie"
+								},
+								{
+									"key": "firstName",
+									"value": "Cristian"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findClientByUsernameAndPassword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findClientByUsernameAndPassword?username=ana&password=parola",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findClientByUsernameAndPassword"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "ana"
+								},
+								{
+									"key": "password",
+									"value": "parola"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logOut",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/logOut?username=adi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"logOut"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "adi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logIn",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/logIn?username=adi&password=pass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"logIn"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "adi"
+								},
+								{
+									"key": "password",
+									"value": "pass"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteClientByUsername",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteClientByUsername?usernameForDelete=adi&adminUsername=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteClientByUsername"
+							],
+							"query": [
+								{
+									"key": "usernameForDelete",
+									"value": "adi"
+								},
+								{
+									"key": "adminUsername",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "deleteAccountByUsername",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteAccountByUsername?usernameForDelete&adminUsername",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteAccountByUsername"
+							],
+							"query": [
+								{
+									"key": "usernameForDelete",
+									"value": null
+								},
+								{
+									"key": "adminUsername",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateLogIn",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/updateLogIn?loggedIn=0&usernameToUpdate=cristi&adminUser=gabi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateLogIn"
+							],
+							"query": [
+								{
+									"key": "loggedIn",
+									"value": "0"
+								},
+								{
+									"key": "usernameToUpdate",
+									"value": "cristi"
+								},
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeUsername",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/changeUsername?newUsername=adrian&currentUsername=adi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"changeUsername"
+							],
+							"query": [
+								{
+									"key": "newUsername",
+									"value": "adrian"
+								},
+								{
+									"key": "currentUsername",
+									"value": "adi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase",
+			"item": [
+				{
+					"name": "purchaseTrip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/purchaseTrip?username=adi&tripName=New York holiday&numberOfAdults=2&numberOfChildren=1&singleRooms=0&doubleRooms=0&familyRooms=1&apartments=0&flightDepartureDate=2021-05-09",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"purchaseTrip"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "adi"
+								},
+								{
+									"key": "tripName",
+									"value": "New York holiday"
+								},
+								{
+									"key": "numberOfAdults",
+									"value": "2"
+								},
+								{
+									"key": "numberOfChildren",
+									"value": "1"
+								},
+								{
+									"key": "singleRooms",
+									"value": "0"
+								},
+								{
+									"key": "doubleRooms",
+									"value": "0"
+								},
+								{
+									"key": "familyRooms",
+									"value": "1"
+								},
+								{
+									"key": "apartments",
+									"value": "0"
+								},
+								{
+									"key": "flightDepartureDate",
+									"value": "2021-05-09"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findRecentlyPurchases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findRecentlyPurchases?adminUser=gabi&referenceDate=2021-01-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findRecentlyPurchases"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								},
+								{
+									"key": "referenceDate",
+									"value": "2021-01-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findPurchasesByUsername",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findPurchasesByUsername?adminUser=gabi&username=adi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findPurchasesByUsername"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								},
+								{
+									"key": "username",
+									"value": "adi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTotalAmountSpendByUsername",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/getTotalAmountSpendByUsername?adminUser=gabi&username=Adi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getTotalAmountSpendByUsername"
+							],
+							"query": [
+								{
+									"key": "adminUser",
+									"value": "gabi"
+								},
+								{
+									"key": "username",
+									"value": "Adi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
